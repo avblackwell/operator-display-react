@@ -58,6 +58,14 @@ import { ChartRadialText } from "@/components/chart-radial-text";
 import { ChartBarDemo } from "@/components/chart-bar-demo";
 import { StripChartDemo } from "@/components/strip-chart-demo";
 import { BulletChartDemo } from "@/components/bullet-chart-demo";
+import { AdvancedBarChartDemo } from "@/components/advanced-bar-chart-demo";
+import { PieChartDemo } from "@/components/pie-chart-demo";
+import { ScatterPlotDemo } from "@/components/scatter-plot-demo";
+import { AdvancedAreaChartDemo } from "@/components/advanced-area-chart-demo";
+import { ComposedChartDemo } from "@/components/composed-chart-demo";
+import { ButtonVariantsDemo } from "@/components/button-variants-demo";
+import { CardVariantsDemo } from "@/components/card-variants-demo";
+import { TabsVariantsDemo } from "@/components/tabs-variants-demo";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -94,6 +102,36 @@ function RouteComponent() {
 
       <ComponentWrapper name="Bullet Chart (Simplified)">
         <BulletChartDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Advanced Bar Charts">
+        <AdvancedBarChartDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Pie & Donut Charts">
+        <PieChartDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Scatter Plots">
+        <ScatterPlotDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Advanced Area Charts">
+        <AdvancedAreaChartDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Composed Charts">
+        <ComposedChartDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Button Variants">
+        <ButtonVariantsDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Card Variants">
+        <CardVariantsDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Tabs Variants">
+        <TabsVariantsDemo />
       </ComponentWrapper>
 
       <ComponentWrapper name="LED Indicator">
