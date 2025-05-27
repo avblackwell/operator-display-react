@@ -55,6 +55,9 @@ import CmxValueDemo from "@/components/cmx-value-demo";
 import CmxStringDemo from "@/components/cmx-string-demo";
 import { ProgressWithTicks } from "@/components/progress-with-ticks";
 import { ChartRadialText } from "@/components/chart-radial-text";
+import { ChartBarDemo } from "@/components/chart-bar-demo";
+import { StripChartDemo } from "@/components/strip-chart-demo";
+import { BulletChartDemo } from "@/components/bullet-chart-demo";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -73,19 +76,39 @@ function RouteComponent() {
         <ChartRadialText />
       </ComponentWrapper>
 
-      <ComponentWrapper name="cmx-LED">
+      <ComponentWrapper name="Gauge Chart">
+        <GaugeDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Bar Chart">
+        <ChartBarDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Progress Chart">
+        <ProgressDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Strip Chart">
+        <StripChartDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="Bullet Chart (Simplified)">
+        <BulletChartDemo />
+      </ComponentWrapper>
+
+      <ComponentWrapper name="LED Indicator">
         <LedDemo />
       </ComponentWrapper>
-      <ComponentWrapper name="command-line">
-        <CmdLineDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="cmx-value">
+      <ComponentWrapper name="Value Indicator">
         <CmxValueDemo />
       </ComponentWrapper>
-      <ComponentWrapper name="cmx-string">
+      <ComponentWrapper name="String Indicator">
         <CmxStringDemo />
       </ComponentWrapper>
 
+      <ComponentWrapper name="command-line">
+        <CmdLineDemo />
+      </ComponentWrapper>
       <ComponentWrapper name="button">
         <ButtonDemo />
       </ComponentWrapper>
