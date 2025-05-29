@@ -66,6 +66,10 @@ import { ComposedChartDemo } from "@/components/composed-chart-demo";
 import { ButtonVariantsDemo } from "@/components/button-variants-demo";
 import { CardVariantsDemo } from "@/components/card-variants-demo";
 import { TabsVariantsDemo } from "@/components/tabs-variants-demo";
+import { ChartAreaDemo } from "@/components/chart-area-demo";
+import { ChartBarMixed } from "@/components/chart-bar-mixed";
+import { ChartDemo } from "@/components/chart-demo";
+import { FormsDemo } from "@/components/forms-demo";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -156,6 +160,144 @@ function RouteComponent() {
       </ComponentWrapper>
       <ComponentWrapper name="switch">
         <SwitchDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Chart Area Demo">
+        <ChartAreaDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Chart Bar Mixed Demo">
+        <ChartBarMixed />
+      </ComponentWrapper>
+      <ComponentWrapper name="Chart Demo">
+        <ChartDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Forms Demo">
+        <FormsDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Accordion Demo">
+        <AccordionDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Alert Demo">
+        <AlertDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Alert Dialog Demo">
+        <AlertDialogDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Aspect Ratio Demo">
+        <AspectRatioDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Avatar Demo">
+        <AvatarDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Badge Demo">
+        <BadgeDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Breadcrumb Demo">
+        <BreadcrumbDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Calendar Demo">
+        <CalendarDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Card Demo">
+        <CardDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Checkbox Demo">
+        <CheckboxDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Collapsible Demo">
+        <CollapsibleDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Combobox Demo">
+        <ComboboxDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Command Demo">
+        <CommandDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Context Menu Demo">
+        <ContextMenuDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Date Picker Demo">
+        <DatePickerDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Dialog Demo">
+        <DialogDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Drawer Demo">
+        <DrawerDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Dropdown Menu Demo">
+        <DropdownMenuDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Form Demo">
+        <FormDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Hover Card Demo">
+        <HoverCardDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Input Demo">
+        <InputDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Label Demo">
+        <LabelDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Menubar Demo">
+        <MenubarDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Pagination Demo">
+        <PaginationDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Popover Demo">
+        <PopoverDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Radio Group Demo">
+        <RadioGroupDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Resizable Demo">
+        <ResizableDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Select Demo">
+        <SelectDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Separator Demo">
+        <SeparatorDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Sheet Demo">
+        <SheetDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Sonner Demo">
+        <SonnerDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Table Demo">
+        <TableDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Tabs Demo">
+        <TabsDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Textarea Demo">
+        <TextareaDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Toggle Demo">
+        <ToggleDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Toggle Group Demo">
+        <ToggleGroupDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Tooltip Demo">
+        <TooltipDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Input OTP Demo">
+        <InputOTPDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Navigation Menu Demo">
+        <NavigationMenuDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Chart Line Demo">
+        <ChartLineDemo />
+      </ComponentWrapper>
+      <ComponentWrapper name="Slider With Input">
+        <SliderWithInput />
+      </ComponentWrapper>
+      <ComponentWrapper name="Chart Radial Label">
+        <ChartRadialLabel />
       </ComponentWrapper>
     </>
   );

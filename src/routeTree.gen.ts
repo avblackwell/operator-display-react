@@ -11,10 +11,19 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as RecentsImport } from './routes/recents'
 import { Route as DragImport } from './routes/drag'
+import { Route as MarketplaceRouteImport } from './routes/marketplace/route'
 import { Route as IndexImport } from './routes/index'
+import { Route as MarketplaceIndexImport } from './routes/marketplace/index'
 
 // Create/Update Routes
+
+const RecentsRoute = RecentsImport.update({
+  id: '/recents',
+  path: '/recents',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const DragRoute = DragImport.update({
   id: '/drag',
@@ -22,10 +31,22 @@ const DragRoute = DragImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const MarketplaceRouteRoute = MarketplaceRouteImport.update({
+  id: '/marketplace',
+  path: '/marketplace',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
+} as any)
+
+const MarketplaceIndexRoute = MarketplaceIndexImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => MarketplaceRouteRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
@@ -39,6 +60,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/marketplace': {
+      id: '/marketplace'
+      path: '/marketplace'
+      fullPath: '/marketplace'
+      preLoaderRoute: typeof MarketplaceRouteImport
+      parentRoute: typeof rootRoute
+    }
     '/drag': {
       id: '/drag'
       path: '/drag'
@@ -46,44 +74,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DragImport
       parentRoute: typeof rootRoute
     }
+    '/recents': {
+      id: '/recents'
+      path: '/recents'
+      fullPath: '/recents'
+      preLoaderRoute: typeof RecentsImport
+      parentRoute: typeof rootRoute
+    }
+    '/marketplace/': {
+      id: '/marketplace/'
+      path: '/'
+      fullPath: '/marketplace/'
+      preLoaderRoute: typeof MarketplaceIndexImport
+      parentRoute: typeof MarketplaceRouteImport
+    }
   }
 }
 
 // Create and export the route tree
 
+interface MarketplaceRouteRouteChildren {
+  MarketplaceIndexRoute: typeof MarketplaceIndexRoute
+}
+
+const MarketplaceRouteRouteChildren: MarketplaceRouteRouteChildren = {
+  MarketplaceIndexRoute: MarketplaceIndexRoute,
+}
+
+const MarketplaceRouteRouteWithChildren =
+  MarketplaceRouteRoute._addFileChildren(MarketplaceRouteRouteChildren)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/marketplace': typeof MarketplaceRouteRouteWithChildren
   '/drag': typeof DragRoute
+  '/recents': typeof RecentsRoute
+  '/marketplace/': typeof MarketplaceIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/drag': typeof DragRoute
+  '/recents': typeof RecentsRoute
+  '/marketplace': typeof MarketplaceIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/marketplace': typeof MarketplaceRouteRouteWithChildren
   '/drag': typeof DragRoute
+  '/recents': typeof RecentsRoute
+  '/marketplace/': typeof MarketplaceIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/drag'
+  fullPaths: '/' | '/marketplace' | '/drag' | '/recents' | '/marketplace/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/drag'
-  id: '__root__' | '/' | '/drag'
+  to: '/' | '/drag' | '/recents' | '/marketplace'
+  id: '__root__' | '/' | '/marketplace' | '/drag' | '/recents' | '/marketplace/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MarketplaceRouteRoute: typeof MarketplaceRouteRouteWithChildren
   DragRoute: typeof DragRoute
+  RecentsRoute: typeof RecentsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MarketplaceRouteRoute: MarketplaceRouteRouteWithChildren,
   DragRoute: DragRoute,
+  RecentsRoute: RecentsRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,14 +162,29 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/drag"
+        "/marketplace",
+        "/drag",
+        "/recents"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
+    "/marketplace": {
+      "filePath": "marketplace/route.tsx",
+      "children": [
+        "/marketplace/"
+      ]
+    },
     "/drag": {
       "filePath": "drag.tsx"
+    },
+    "/recents": {
+      "filePath": "recents.tsx"
+    },
+    "/marketplace/": {
+      "filePath": "marketplace/index.tsx",
+      "parent": "/marketplace"
     }
   }
 }

@@ -49,13 +49,13 @@ const data = {
   navMain: [
     {
       title: "Recents",
-      url: "#",
+      url: "/#/recents",
       icon: Clock,
       isActive: true,
     },
     {
       title: "Marketplace",
-      url: "#",
+      url: "/#/marketplace",
       icon: Blocks,
     },
   ],
