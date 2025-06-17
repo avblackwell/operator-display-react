@@ -1,141 +1,186 @@
-"use client";
-
-import * as React from "react";
+import * as React from "react"
 import {
-  AudioWaveform,
-  Blocks,
-  Clock,
+  BookOpen,
+  Bot,
   Command,
-  Component,
-  LayoutDashboardIcon,
-  MessageCircleQuestion,
-  Palette,
-} from "lucide-react";
+  Frame,
+  LifeBuoy,
+  Map,
+  PieChart,
+  Send,
+  Settings2,
+  SquareTerminal,
+} from "lucide-react"
 
-import { NavFavorites } from "@/components/nav-favorites";
+import { NavMain } from "@/components/nav-main"
+import { NavProjects } from "@/components/nav-projects"
+import { NavSecondary } from "@/components/nav-secondary"
+import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarHeader,
-  SidebarSeparator,
-} from "@/components/ui/sidebar";
-import { NavUser } from "./nav-user";
-import { NavSecondary } from "./nav-secondary";
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar"
 
-// This is sample data.
 const data = {
   user: {
-    name: "first last",
-    email: "email@example.com",
-    avatar: "/avatars/example.jpg",
+    name: "shadcn",
+    email: "m@example.com",
+    avatar: "/avatars/shadcn.jpg",
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: Command,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   navMain: [
     {
-      title: "Recents",
-      url: "/#/recents",
-      icon: Clock,
+      title: "Playground",
+      url: "#",
+      icon: SquareTerminal,
       isActive: true,
+      items: [
+        {
+          title: "History",
+          url: "#",
+        },
+        {
+          title: "Starred",
+          url: "#",
+        },
+        {
+          title: "Settings",
+          url: "#",
+        },
+      ],
     },
     {
-      title: "Marketplace",
-      url: "/#/marketplace",
-      icon: Blocks,
+      title: "Models",
+      url: "#",
+      icon: Bot,
+      items: [
+        {
+          title: "Genesis",
+          url: "#",
+        },
+        {
+          title: "Explorer",
+          url: "#",
+        },
+        {
+          title: "Quantum",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Documentation",
+      url: "#",
+      icon: BookOpen,
+      items: [
+        {
+          title: "Introduction",
+          url: "#",
+        },
+        {
+          title: "Get Started",
+          url: "#",
+        },
+        {
+          title: "Tutorials",
+          url: "#",
+        },
+        {
+          title: "Changelog",
+          url: "#",
+        },
+      ],
+    },
+    {
+      title: "Settings",
+      url: "#",
+      icon: Settings2,
+      items: [
+        {
+          title: "General",
+          url: "#",
+        },
+        {
+          title: "Team",
+          url: "#",
+        },
+        {
+          title: "Billing",
+          url: "#",
+        },
+        {
+          title: "Limits",
+          url: "#",
+        },
+      ],
     },
   ],
   navSecondary: [
     {
-      title: "Marketplace",
+      title: "Support",
       url: "#",
-      icon: Blocks,
+      icon: LifeBuoy,
     },
     {
-      title: "Help",
+      title: "Feedback",
       url: "#",
-      icon: MessageCircleQuestion,
+      icon: Send,
     },
   ],
-  favorites: [
+  projects: [
     {
-      name: "Dashboard 1",
+      name: "Design Engineering",
       url: "#",
-      emoji: "D",
+      icon: Frame,
     },
     {
-      name: "Dashboard 2",
+      name: "Sales & Marketing",
       url: "#",
-      emoji: "D",
+      icon: PieChart,
     },
     {
-      name: "Dashboard 3",
+      name: "Travel",
       url: "#",
-      emoji: "D",
-    },
-    {
-      name: "Component 1",
-      url: "#",
-      emoji: "C",
-    },
-    {
-      name: "Component 2",
-      url: "#",
-      emoji: "C",
-    },
-    {
-      name: "Component 3",
-      url: "#",
-      emoji: "C",
-    },
-    {
-      name: "Component 4",
-      url: "#",
-      emoji: "C",
-    },
-    {
-      name: "Theme 1",
-      url: "#",
-      emoji: "T",
-    },
-    {
-      name: "Theme 2",
-      url: "#",
-      emoji: "T",
-    },
-    {
-      name: "Theme 3",
-      url: "#",
-      emoji: "T",
+      icon: Map,
     },
   ],
-};
+}
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar className="border-r-0" {...props}>
-      <SidebarHeader className="h-16 border-b border-sidebar-border">
-        <NavUser user={data.user} />
+    <Sidebar
+      className="top-(--header-height) h-[calc(100svh-var(--header-height))]!"
+      {...props}
+    >
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton size="lg" asChild>
+              <a href="#">
+                <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+                  <Command className="size-4" />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-medium">Acme Inc</span>
+                  <span className="truncate text-xs">Enterprise</span>
+                </div>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent className="gap-0">
-        <NavSecondary items={data.navMain} />
-        <SidebarSeparator className="m-0" />
-        <NavFavorites favorites={data.favorites} />
+      <SidebarContent>
+        <NavMain items={data.navMain} />
+        <NavProjects projects={data.projects} />
+        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
+      <SidebarFooter>
+        <NavUser user={data.user} />
+      </SidebarFooter>
     </Sidebar>
-  );
+  )
 }

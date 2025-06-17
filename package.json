@@ -2,12 +2,23 @@
   "name": "my-app",
   "private": true,
   "type": "module",
+  "main": "electron/main.cjs",
+  "homepage": "./",
   "scripts": {
     "dev": "vite --port 3000",
     "start": "vite --port 3000",
     "build": "vite build && tsc",
+    "build:web": "vite build && tsc",
+    "build:electron": "vite build && tsc && electron-builder",
     "serve": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "electron": "NODE_ENV=development electron .",
+    "electron:dev": "concurrently \"pnpm dev\" \"wait-on http://localhost:3000 && NODE_ENV=development electron .\"",
+    "electron:pack": "pnpm build:web && electron-builder --dir",
+    "electron:dist": "pnpm build:web && electron-builder",
+    "electron:dist:mac": "pnpm build:web && electron-builder --mac",
+    "electron:dist:win": "pnpm build:web && electron-builder --win",
+    "electron:dist:linux": "pnpm build:web && electron-builder --linux"
   },
   "dependencies": {
     "@dnd-kit/abstract": "^0.1.13",
@@ -71,10 +82,91 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12",
     "jsdom": "^26.0.0",
     "typescript": "^5.7.2",
     "vite": "^6.1.0",
     "vitest": "^3.0.5",
+    "wait-on": "^8.0.3",
     "web-vitals": "^4.2.4"
+  },
+  "build": {
+    "appId": "com.yourcompany.operator-display",
+    "productName": "Operator Display",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "public",
+        "to": "public"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }

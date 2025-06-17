@@ -3,3 +3,8 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Electron build artifacts
+dist-electron
+electron-builder.env
+*.tgz

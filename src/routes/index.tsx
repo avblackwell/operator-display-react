@@ -1,75 +1,72 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ComponentWrapper } from "@/components/component-wrapper";
-import { ButtonDemo } from "@/components/button-demo";
-import { AccordionDemo } from "@/components/accordion-demo";
-import { AlertDemo } from "@/components/alert-demo";
-import { AlertDialogDemo } from "@/components/alert-dialog-demo";
-import { AspectRatioDemo } from "@/components/aspect-ratio-demo";
-import { AvatarDemo } from "@/components/avatar-demo";
-import { BadgeDemo } from "@/components/badge-demo";
-import { BreadcrumbDemo } from "@/components/breadcrumb-demo";
-import { CalendarDemo } from "@/components/calendar-demo";
-import { CardDemo } from "@/components/card-demo";
-import { CheckboxDemo } from "@/components/checkbox-demo";
-import { CollapsibleDemo } from "@/components/collapsible-demo";
-import { ComboboxDemo } from "@/components/combobox-demo";
-import { CommandDemo } from "@/components/command-demo";
-import { ContextMenuDemo } from "@/components/context-menu-demo";
-import { DatePickerDemo } from "@/components/date-picker-demo";
-import { DialogDemo } from "@/components/dialog-demo";
-import { DrawerDemo } from "@/components/drawer-demo";
-import { DropdownMenuDemo } from "@/components/dropdown-menu-demo";
-import { FormDemo } from "@/components/form-demo";
-import { HoverCardDemo } from "@/components/hover-card-demo";
-import { InputDemo } from "@/components/input-demo";
-import { LabelDemo } from "@/components/label-demo";
-import { MenubarDemo } from "@/components/menubar-demo";
-import { PaginationDemo } from "@/components/pagination-demo";
-import { PopoverDemo } from "@/components/popover-demo";
-import { ProgressDemo } from "@/components/progress-demo";
-import { RadioGroupDemo } from "@/components/radio-group-demo";
-import { ResizableDemo } from "@/components/resizable-demo";
-import { ScrollAreaDemo } from "@/components/scroll-area-demo";
-import { SelectDemo } from "@/components/select-demo";
-import { SeparatorDemo } from "@/components/separator-demo";
-import { SheetDemo } from "@/components/sheet-demo";
-import { SliderDemo } from "@/components/slider-demo";
-import { SonnerDemo } from "@/components/sonner-demo";
-import { SwitchDemo } from "@/components/switch-demo";
-import { TableDemo } from "@/components/table-demo";
-import { TabsDemo } from "@/components/tabs-demo";
-import { TextareaDemo } from "@/components/textarea-demo";
-import { ToggleDemo } from "@/components/toggle-demo";
-import { ToggleGroupDemo } from "@/components/toggle-group-demo";
-import { TooltipDemo } from "@/components/tooltip-demo";
-import { InputOTPDemo } from "@/components/input-otp-demo";
-import { NavigationMenuDemo } from "@/components/navigation-menu-demo";
-import { ChartLineDemo } from "@/components/chart-line-demo";
-import SliderWithTicks from "@/components/slider-with-ticks";
-import SliderWithInput from "@/components/slider-with-input";
-import { ChartRadialLabel } from "@/components/chart-radial-label";
-import { GaugeDemo } from "@/components/gauge-demo";
-import { LedDemo } from "@/components/led-demo";
-import CmdLineDemo from "@/components/cmd-line-demo";
-import CmxValueDemo from "@/components/cmx-value-demo";
-import CmxStringDemo from "@/components/cmx-string-demo";
-import { ProgressWithTicks } from "@/components/progress-with-ticks";
-import { ChartRadialText } from "@/components/chart-radial-text";
-import { ChartBarDemo } from "@/components/chart-bar-demo";
-import { StripChartDemo } from "@/components/strip-chart-demo";
-import { BulletChartDemo } from "@/components/bullet-chart-demo";
-import { AdvancedBarChartDemo } from "@/components/advanced-bar-chart-demo";
-import { PieChartDemo } from "@/components/pie-chart-demo";
-import { ScatterPlotDemo } from "@/components/scatter-plot-demo";
-import { AdvancedAreaChartDemo } from "@/components/advanced-area-chart-demo";
-import { ComposedChartDemo } from "@/components/composed-chart-demo";
-import { ButtonVariantsDemo } from "@/components/button-variants-demo";
-import { CardVariantsDemo } from "@/components/card-variants-demo";
-import { TabsVariantsDemo } from "@/components/tabs-variants-demo";
-import { ChartAreaDemo } from "@/components/chart-area-demo";
-import { ChartBarMixed } from "@/components/chart-bar-mixed";
-import { ChartDemo } from "@/components/chart-demo";
-import { FormsDemo } from "@/components/forms-demo";
+
+import { ComponentWrapper } from "@/components/demo/component-wrapper";
+import { SliderDemo } from "@/components/demo/slider-demo";
+import { ProgressWithTicks } from "@/components/demo/progress-with-ticks";
+import { ChartRadialText } from "@/components/demo/chart-radial-text";
+import { GaugeDemo } from "@/components/demo/gauge-demo";
+import { ChartBarDemo } from "@/components/demo/chart-bar-demo";
+import { ProgressDemo } from "@/components/demo/progress-demo";
+import { StripChartDemo } from "@/components/demo/strip-chart-demo";
+import { BulletChartDemo } from "@/components/demo/bullet-chart-demo";
+import { AdvancedBarChartDemo } from "@/components/demo/advanced-bar-chart-demo";
+import { PieChartDemo } from "@/components/demo/pie-chart-demo";
+import { ScatterPlotDemo } from "@/components/demo/scatter-plot-demo";
+import { AdvancedAreaChartDemo } from "@/components/demo/advanced-area-chart-demo";
+import { ComposedChartDemo } from "@/components/demo/composed-chart-demo";
+import { ButtonVariantsDemo } from "@/components/demo/button-variants-demo";
+import { CardVariantsDemo } from "@/components/demo/card-variants-demo";
+import { TabsVariantsDemo } from "@/components/demo/tabs-variants-demo";
+import CmxValueDemo from "@/components/demo/cmx-value-demo";
+import CmxStringDemo from "@/components/demo/cmx-string-demo";
+import CmdLineDemo from "@/components/demo/cmd-line-demo";
+import { ButtonDemo } from "@/components/demo/button-demo";
+import { ScrollAreaDemo } from "@/components/demo/scroll-area-demo";
+import { SwitchDemo } from "@/components/demo/switch-demo";
+import { FormsDemo } from "@/components/demo/forms-demo";
+import { AccordionDemo } from "@/components/demo/accordion-demo";
+import { AlertDemo } from "@/components/demo/alert-demo";
+import { AlertDialogDemo } from "@/components/demo/alert-dialog-demo";
+import { AspectRatioDemo } from "@/components/demo/aspect-ratio-demo";
+import { AvatarDemo } from "@/components/demo/avatar-demo";
+import { BadgeDemo } from "@/components/demo/badge-demo";
+import { BreadcrumbDemo } from "@/components/demo/breadcrumb-demo";
+import { CalendarDemo } from "@/components/demo/calendar-demo";
+import { CardDemo } from "@/components/demo/card-demo";
+import { CheckboxDemo } from "@/components/demo/checkbox-demo";
+import { ChartLineDemo } from "@/components/demo/chart-line-demo";
+import { ChartRadialLabel } from "@/components/demo/chart-radial-label";
+import { CollapsibleDemo } from "@/components/demo/collapsible-demo";
+import { ComboboxDemo } from "@/components/demo/combobox-demo";
+import { CommandDemo } from "@/components/demo/command-demo";
+import { ContextMenuDemo } from "@/components/demo/context-menu-demo";
+import { DatePickerDemo } from "@/components/demo/date-picker-demo";
+import { DialogDemo } from "@/components/demo/dialog-demo";
+import { DrawerDemo } from "@/components/demo/drawer-demo";
+import { DropdownMenuDemo } from "@/components/demo/dropdown-menu-demo";
+import { FormDemo } from "@/components/demo/form-demo";
+import { NavigationMenuDemo } from "@/components/demo/navigation-menu-demo";
+import { PaginationDemo } from "@/components/demo/pagination-demo";
+import { PopoverDemo } from "@/components/demo/popover-demo";
+import { RadioGroupDemo } from "@/components/demo/radio-group-demo";
+import { ResizableDemo } from "@/components/demo/resizable-demo";
+import { SelectDemo } from "@/components/demo/select-demo";
+import { SeparatorDemo } from "@/components/demo/separator-demo";
+import { SheetDemo } from "@/components/demo/sheet-demo";
+import SliderWithInput from "@/components/demo/slider-with-input";
+import { SonnerDemo } from "@/components/demo/sonner-demo";
+import { TableDemo } from "@/components/demo/table-demo";
+import { TabsDemo } from "@/components/demo/tabs-demo";
+import { TextareaDemo } from "@/components/demo/textarea-demo";
+import { ToggleDemo } from "@/components/demo/toggle-demo";
+import { ToggleGroupDemo } from "@/components/demo/toggle-group-demo";
+import { TooltipDemo } from "@/components/demo/tooltip-demo";
+import { HoverCardDemo } from "@/components/demo/hover-card-demo";
+import { InputDemo } from "@/components/demo/input-demo";
+import { InputOTPDemo } from "@/components/demo/input-otp-demo";
+import { LabelDemo } from "@/components/demo/label-demo";
+import { MenubarDemo } from "@/components/demo/menubar-demo";
+import { LedDemo } from "@/components/demo/led-demo";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -161,15 +158,7 @@ function RouteComponent() {
       <ComponentWrapper name="switch">
         <SwitchDemo />
       </ComponentWrapper>
-      <ComponentWrapper name="Chart Area Demo">
-        <ChartAreaDemo />
-      </ComponentWrapper>
-      <ComponentWrapper name="Chart Bar Mixed Demo">
-        <ChartBarMixed />
-      </ComponentWrapper>
-      <ComponentWrapper name="Chart Demo">
-        <ChartDemo />
-      </ComponentWrapper>
+
       <ComponentWrapper name="Forms Demo">
         <FormsDemo />
       </ComponentWrapper>

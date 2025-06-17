@@ -24,7 +24,7 @@ export const Route = createFileRoute("/marketplace")({
 function RouteComponent() {
   return (
     <>
-      <header className="sticky z-50 top-0 flex h-16 shrink-0 items-center gap-2 border-b bg-sidebar-primary-foreground">
+      <header className="sticky z-50 flex h-16 shrink-0 items-center gap-2 border-b bg-sidebar-primary-foreground top-(--header-height) h-(--header-height)">
         <div className="flex flex-1 items-center gap-2 px-4">
           <Breadcrumb>
             <BreadcrumbList>
